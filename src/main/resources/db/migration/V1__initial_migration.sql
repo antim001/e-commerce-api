@@ -72,3 +72,12 @@ CREATE INDEX fk_wishlist_on_user ON wishlist (user_id);
 
 ALTER TABLE profiles
     ADD CONSTRAINT profiles_ibfk_1 FOREIGN KEY (id) REFERENCES users (id) ON DELETE NO ACTION;
+
+-- Insert test data
+INSERT INTO categories (name) VALUES ('Electronics');
+INSERT INTO categories (name) VALUES ('Clothing');
+INSERT INTO categories (name) VALUES ('Books');
+
+INSERT INTO users (name, email, password) VALUES ('John Doe', 'john@example.com', 'password123');
+
+INSERT INTO products (name, price, description, category_id) VALUES ('mobile', 23.99, 'electronics', 2);
